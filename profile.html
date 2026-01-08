@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Profile | Task Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app profile-page">
+  <h2>Profile Settings</h2>
+
+  <!-- Profile Picture -->
+  <div class="profile-pic-section">
+    <img id="profilePicLarge" src="https://via.placeholder.com/150">
+    <input type="file" id="profilePicInput" accept="image/*" hidden>
+    <button class="primary" onclick="openPicUpload()">Update Profile Picture</button>
+  </div>
+
+  <!-- Username -->
+  <div class="profile-field">
+    <label>Change Username</label>
+    <input id="newUsername" placeholder="Enter new username">
+    <button class="primary" onclick="confirmUsernameChange()">Update Username</button>
+  </div>
+
+  <!-- Change Password -->
+  <div class="profile-field">
+    <label>Change Password</label>
+
+    <div class="password-box">
+      <input
+        id="newPassword"
+        type="password"
+        placeholder="Enter new password"
+        oninput="checkPasswordStrength()"
+      >
+      <span class="eye" onclick="showPassword('newPassword')">👁</span>
+    </div>
+
+    <!-- Suggest password -->
+    <p class="suggest" onclick="suggestPassword('newPassword')">
+      Suggest strong password
+    </p>
+
+    <p id="strengthText" class="strength"></p>
+
+    <button class="primary" onclick="confirmPasswordChange()">
+      Update Password
+    </button>
+  </div>
+
+  <button class="primary" onclick="goDashboard()">Back to Dashboard</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

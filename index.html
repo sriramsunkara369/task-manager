@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard | Task Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+<header class="topbar">
+  <div class="left-header">
+    <label for="profileUpload">
+      <img id="profilePic" src="https://via.placeholder.com/42">
+    </label>
+    <input type="file" id="profileUpload" accept="image/*" hidden>
+    <span id="welcome"></span>
+  </div>
+
+  <div class="menu">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="dropdown" id="dropdownMenu">
+      <button class="drop-item" onclick="goProfile()">👤 Profile</button>
+      <button class="drop-item" onclick="goSettings()">⚙️ Settings</button>
+      <button class="drop-item logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+  </div>
+</header>
+
+<!-- Motivation -->
+<div class="quote-card">
+  <p id="quoteText"></p>
+</div>
+
+<section class="card">
+  <h2>Add New Task</h2>
+  <input id="title" placeholder="Task title">
+  <textarea id="description" placeholder="Task description"></textarea>
+  <input type="date" id="dueDate">
+  <button class="primary" onclick="addTask()">Add Task</button>
+</section>
+
+<div class="filters">
+  <button onclick="filterTasks('all')">All</button>
+  <button onclick="filterTasks('pending')">Pending</button>
+  <button onclick="filterTasks('completed')">Completed</button>
+</div>
+
+<section class="card">
+  <h2>Your Tasks</h2>
+  <p id="emptyMessage">No tasks added yet.</p>
+  <ul id="taskList"></ul>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
